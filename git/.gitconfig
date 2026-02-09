@@ -1,0 +1,25 @@
+[user]
+	email = erik.vandeputte@companion.energy
+	name = erik
+[core]
+	excludesfile = /Users/erik/.gitignore_global
+	editor = subl -n -w
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[commit]
+	template = /Users/erik/.stCommitMsg
+[credential]
+	helper = cache
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+[alias]
+	nc = commit --no-verify
