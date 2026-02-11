@@ -29,3 +29,12 @@ export PRE_COMMIT_NO_CONCURRENCY=1
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Ghostty shell integration
+if [[ -n $GHOSTTY_RESOURCES_DIR ]]; then
+  source "$GHOSTTY_RESOURCES_DIR/shell-integration/zsh/ghostty-integration"
+fi
+
+# Claude
+alias c="claude"
+alias cr="claude --resume"
